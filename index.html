@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本史探究マスター：昭和恐慌・協調外交</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #090d16 100%);
+            min-height: 100vh;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .option-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.4);
+        }
+        .pulse-glow {
+            animation: pulse-glow-anim 2s infinite;
+        }
+        @keyframes pulse-glow-anim {
+            0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(129, 140, 248, 0.8); }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header Controls -->
+    <header class="w-full p-4 flex justify-between items-center max-w-4xl mx-auto z-10">
+        <div class="flex items-center space-x-3">
+            <span class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-2.5 rounded-2xl text-xl font-bold shadow-lg shadow-indigo-500/30">
+                <i class="fa-solid fa-coins"></i>
+            </span>
+            <div>
+                <h1 class="text-lg font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-200">
+                    日本史探究 Master
+                </h1>
+                <p class="text-xs text-slate-400">昭和恐慌・協調外交 (プリントNo.60 完全対応)</p>
+            </div>
+        </div>
+        
+        <!-- Audio Controls -->
+        <div class="flex items-center space-x-2 bg-slate-800/80 p-1.5 rounded-2xl border border-slate-700">
+            <button id="bgm-toggle" class="px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition bg-slate-700 hover:bg-slate-600 text-slate-300">
+                <i class="fa-solid fa-music"></i>
+                <span id="bgm-status">BGM: OFF</span>
+            </button>
+            <button id="se-toggle" class="px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition bg-indigo-600 hover:bg-indigo-500 text-white">
+                <i class="fa-solid fa-volume-high"></i>
+                <span id="se-status">SE: ON</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex items-center justify-center p-4 w-full max-w-4xl mx-auto">
+        
+        <!-- START SCREEN -->
+        <div id="start-screen" class="w-full glass-card rounded-3xl p-6 md:p-10 shadow-2xl text-center space-y-6">
+            <div class="inline-block p-4 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-1">
+                <i class="fa-solid fa-chart-line-down text-5xl text-indigo-400"></i>
+            </div>
+            <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">
+                浜口雄幸内閣と昭和恐慌・幣原外交<br>
+                <span class="text-indigo-400 text-xl md:text-2xl font-bold">高校日本史プリント60 完全攻略テスト</span>
+            </h2>
+            <p class="text-slate-300 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+                井上準之助蔵相による旧平価金解禁、世界恐慌波及と農業恐慌、ロンドン海軍軍備制限条約と統帥権干犯問題まで穴埋め①〜⑨を完全マスター！
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left my-6">
+                <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                    <div class="text-indigo-400 font-bold mb-1 flex items-center">
+                        <i class="fa-solid fa-list-check mr-2"></i>穴埋め①〜⑨完全網羅
+                    </div>
+                    <p class="text-xs text-slate-400">浜口雄幸、世界恐慌、金解禁、昭和恐慌、農業恐慌、重要産業統制法、ロンドン海軍軍備制限条約、統帥権干犯問題、第2次若槻礼次郎。</p>
+                </div>
+                <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                    <div class="text-purple-400 font-bold mb-1 flex items-center">
+                        <i class="fa-solid fa-scale-balanced mr-2"></i>旧平価 vs 新平価の図解
+                    </div>
+                    <p class="text-xs text-slate-400">なぜ旧平価解禁で円高・金流出となり恐慌が激化したのか？経済理論も丁寧に解説！</p>
+                </div>
+                <div class="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                    <div class="text-pink-400 font-bold mb-1 flex items-center">
+                        <i class="fa-solid fa-ranking-star mr-2"></i>BGM・SE＆称号判定
+                    </div>
+                    <p class="text-xs text-slate-400">音演出付きの小テストで楽しく学習。全問正解で「昭和経済・外交マスター」の称号を獲得しよう！</p>
+                </div>
+            </div>
+
+            <!-- Start Button -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+                <button id="start-btn" class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-black text-lg shadow-xl hover:brightness-110 active:scale-95 transition pulse-glow">
+                    <i class="fa-solid fa-play mr-2"></i> 小テストを開始する！
+                </button>
+            </div>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div id="quiz-screen" class="w-full glass-card rounded-3xl p-6 md:p-8 shadow-2xl hidden space-y-6">
+            
+            <!-- Progress & Meta -->
+            <div class="space-y-2">
+                <div class="flex justify-between items-center text-xs font-bold text-slate-400">
+                    <span id="question-category" class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full border border-indigo-500/30">
+                        分野: 経済政策
+                    </span>
+                    <span id="question-count">第 1 / 12 問</span>
+                </div>
+                <!-- Progress Bar -->
+                <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-700">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-300" style="width: 8.33%;"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-slate-800/80 p-5 md:p-6 rounded-2xl border border-slate-700/80 space-y-4">
+                <h3 id="question-text" class="text-lg md:text-xl font-bold text-white leading-snug">
+                    <!-- Question text injected here -->
+                </h3>
+                
+                <!-- Context Box -->
+                <div id="context-box" class="hidden p-3.5 rounded-xl bg-slate-900/80 border border-indigo-500/30 text-xs text-indigo-200 flex items-center space-x-3">
+                    <div id="context-icon" class="text-2xl text-indigo-400 shrink-0"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div id="context-text" class="italic leading-relaxed"></div>
+                </div>
+            </div>
+
+            <!-- Options Grid -->
+            <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <!-- Option buttons dynamically generated -->
+            </div>
+
+            <!-- Feedback Area -->
+            <div id="feedback-card" class="hidden p-5 rounded-2xl border space-y-3 animate-fade-in">
+                <div class="flex items-center justify-between">
+                    <div id="feedback-badge" class="font-black text-lg flex items-center space-x-2">
+                        <!-- Icon & Correct/Incorrect text -->
+                    </div>
+                    <div id="score-increment" class="text-xs font-bold px-2.5 py-1 rounded-full"></div>
+                </div>
+                <p id="explanation-text" class="text-sm text-slate-200 leading-relaxed">
+                    <!-- Explanation injected here -->
+                </p>
+                <button id="next-btn" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition flex items-center justify-center space-x-2 shadow-lg">
+                    <span>次の問題へ進む</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="w-full glass-card rounded-3xl p-6 md:p-10 shadow-2xl text-center hidden space-y-6">
+            <div class="inline-block p-4 rounded-full bg-indigo-500/10 border border-indigo-500/30">
+                <i id="rank-icon" class="fa-solid fa-crown text-5xl text-indigo-400"></i>
+            </div>
+
+            <div class="space-y-1">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">小テスト完了！マスターランク</p>
+                <h2 id="rank-title" class="text-2xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-200">
+                    昭和経済・外交マスター
+                </h2>
+            </div>
+
+            <!-- Score Display Box -->
+            <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 max-w-sm mx-auto flex justify-around items-center">
+                <div>
+                    <p class="text-xs text-slate-400 font-semibold">正解数</p>
+                    <p class="text-3xl font-black text-indigo-400"><span id="final-score">0</span> <span class="text-sm text-slate-400">/ 12</span></p>
+                </div>
+                <div class="h-10 w-px bg-slate-700"></div>
+                <div>
+                    <p class="text-xs text-slate-400 font-semibold">正答率</p>
+                    <p id="final-percentage" class="text-3xl font-black text-emerald-400">0%</p>
+                </div>
+            </div>
+
+            <p id="rank-description" class="text-sm text-slate-300 max-w-md mx-auto leading-relaxed bg-slate-900/50 p-4 rounded-xl border border-slate-800">
+                <!-- Evaluation message -->
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+                <button id="restart-btn" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>もう一度挑戦する</span>
+                </button>
+                <button id="review-btn" class="px-6 py-3.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-200 font-bold transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>全解答・解説を見直す</span>
+                </button>
+            </div>
+
+            <!-- Review Accordion Container -->
+            <div id="review-container" class="hidden text-left space-y-3 pt-4 border-t border-slate-700 max-h-96 overflow-y-auto pr-2">
+                <h4 class="font-bold text-sm text-indigo-300 flex items-center">
+                    <i class="fa-solid fa-clipboard-list mr-2"></i>プリントNo.60 全問題の完全解説
+                </h4>
+                <div id="review-list" class="space-y-3">
+                    <!-- Dynamic review cards -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 text-xs text-slate-500 border-t border-slate-800/80 mt-auto">
+        日本史探究 授業プリントNo.60「昭和恐慌・協調外交」完全対応小テスト
+    </footer>
+
+    <script>
+        // Web Audio API Synthesizer (BGM and Sound Effects)
+        class SoundEngine {
+            constructor() {
+                this.ctx = null;
+                this.bgmPlaying = false;
+                this.seEnabled = true;
+                this.bgmInterval = null;
+                this.step = 0;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    this.ctx = new AudioContext();
+                }
+                if (this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            playCorrect() {
+                if (!this.seEnabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                
+                // Bright Ascending Major Arpeggio: G4 - C5 - E5 - G5
+                const freqs = [392.00, 523.25, 659.25, 783.99];
+                freqs.forEach((f, index) => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(f, now + index * 0.07);
+                    
+                    gain.gain.setValueAtTime(0.25, now + index * 0.07);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + index * 0.07 + 0.35);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    
+                    osc.start(now + index * 0.07);
+                    osc.stop(now + index * 0.07 + 0.35);
+                });
+            }
+
+            playIncorrect() {
+                if (!this.seEnabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+
+                // Low Dissonant Buzzer
+                [130.81, 138.59].forEach(freq => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(freq, now);
+
+                    gain.gain.setValueAtTime(0.22, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.45);
+                });
+            }
+
+            playClick() {
+                if (!this.seEnabled) return;
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(400, now + 0.04);
+
+                gain.gain.setValueAtTime(0.12, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.04);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+
+                osc.start(now);
+                osc.stop(now + 0.04);
+            }
+
+            toggleBGM() {
+                this.init();
+                this.bgmPlaying = !this.bgmPlaying;
+                if (this.bgmPlaying) {
+                    this.startBGM();
+                } else {
+                    this.stopBGM();
+                }
+                return this.bgmPlaying;
+            }
+
+            startBGM() {
+                if (this.bgmInterval) clearInterval(this.bgmInterval);
+                
+                // Historical Study Melody (Smooth Pentatonic Rhythm)
+                const melody = [
+                    293.66, 329.63, 392.00, 440.00,
+                    523.25, 440.00, 392.00, 329.63,
+                    349.23, 392.00, 440.00, 523.25,
+                    587.33, 523.25, 440.00, 392.00
+                ];
+                
+                this.step = 0;
+                this.bgmInterval = setInterval(() => {
+                    if (!this.bgmPlaying) return;
+                    const now = this.ctx.currentTime;
+                    const freq = melody[this.step % melody.length];
+
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now);
+
+                    gain.gain.setValueAtTime(0.02, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.35);
+
+                    this.step++;
+                }, 360);
+            }
+
+            stopBGM() {
+                if (this.bgmInterval) {
+                    clearInterval(this.bgmInterval);
+                    this.bgmInterval = null;
+                }
+            }
+        }
+
+        const sound = new SoundEngine();
+
+        // Question Database - Strictly 100% Comprehensive for PDF Print 60
+        const questions = [
+            {
+                category: "金解禁前の日本経済",
+                question: "1920年代後半の金解禁実施前の日本経済の状況について、正しい記述はどれか？",
+                context: "金輸出禁止下の日本経済の課題",
+                options: [
+                    "日銀券の増発によるインフレ傾向、工業の国際競争力不足に伴う輸入超過により、円の為替相場は不安定で下落していた",
+                    "金本位制が完全に機能し、円相場は非常によく安定していた",
+                    "徹底した為替管理により、国際収支は大幅な黒字が続いていた",
+                    "重工業の急成長により、諸外国に比べて輸出競争力が大幅に高まっていた"
+                ],
+                answer: 0,
+                explanation: "当時の日本は日銀券（不換紙幣）の増発によるインフレ傾向や国際競争力不足による輸入超過のため、円相場が動揺しつつ下落していました。"
+            },
+            {
+                category: "浜口雄幸内閣の経済政策",
+                question: "1929年に成立した第1次（ ① ）内閣（立憲民政党）のもと、蔵相井上準之助が断行した三大経済政策の組み合わせとして正しいものはどれか？",
+                context: "プリント穴埋め①の確認",
+                options: [
+                    "浜口雄幸 内閣 — 財政緊縮・金解禁・産業合理化",
+                    "田中義一 内閣 — モラトリアム発令・積極財政・東方会議",
+                    "犬養毅 内閣 — 金輸出再禁止・時局重振振興事業・高橋財政",
+                    "斉藤実 内閣 — 帝人事件・農山漁村経済更生運動・農村振興"
+                ],
+                answer: 0,
+                explanation: "第1次【浜口雄幸】(①)内閣の井上準之助蔵相は、経済体質を改善するため「財政緊縮」「金解禁」「産業合理化」を断行しました。"
+            },
+            {
+                category: "世界恐慌の発生",
+                question: "1929年10月、ニューヨーク株式相場の大暴落をきっかけに発生し、アメリカからヨーロッパ、そして全世界へ波及した不況（ ② ）は何か？",
+                context: "プリント穴埋め②の確認",
+                options: [
+                    "世界恐慌",
+                    "昭和恐慌",
+                    "金融恐慌",
+                    "戦後恐慌"
+                ],
+                answer: 0,
+                explanation: "1929年10月に発生した【世界恐慌】(②)は、世界中の経済に深刻な打撃を与え、日本の金解禁直後の経済を直撃することになりました。"
+            },
+            {
+                category: "旧平価解禁のメカニズム",
+                question: "井上準之助蔵相が行った「旧平価」による金解禁の説明として正しいものはどれか？",
+                context: "旧平価解禁（対米100円＝49.85ドル）の仕組み",
+                options: [
+                    "解禁前の実際の為替相場より高いレート（旧平価）で解禁したため、実質的な「円高」となり輸出不振を招いた",
+                    "解禁前の相場より低いレートで解禁したため、大幅な円安となり輸入品が高騰した",
+                    "新平価で解禁したため、為替相場への影響は全く存在しなかった",
+                    "石橋湛山らの主張通り、実勢相場に合わせた切下げ解禁を実施した"
+                ],
+                answer: 0,
+                explanation: "旧平価（100円＝49.85ドル）での解禁は、実勢相場（約45〜46ドル）より高いレートに引き上げる「円切り上げ（円高）」となるため、日本製品の輸出価格が上がり【輸出不振】を招きました。なお石橋湛山や高橋亀吉らは「新平価（円安レート）解禁」を主張していました。"
+            },
+            {
+                category: "金解禁の実施と影響",
+                question: "1930年1月に実施された（ ③ ）と、それに伴って発生した深刻な経済不況（ ④ ）に関する記述として正しいものはどれか？",
+                context: "プリント穴埋め③・④の確認",
+                options: [
+                    "1930年1月に【金解禁】(③)が実施されたが、旧平価解禁と世界恐慌が重なり、【昭和恐慌】(④)に突入した",
+                    "1930年1月に【金輸出再禁止】(③)が実施され、すぐに【平成恐慌】(④)が終息した",
+                    "金解禁によりただちに外貨が流入し、日本経済は空前の大繁栄を迎えた",
+                    "金解禁によって為替が円安になり、輸出が爆発的に増加した"
+                ],
+                answer: 0,
+                explanation: "1930年1月の【金解禁】(③)は為替安定と輸出振興を目指しましたが、旧平価解禁による円高と世界恐慌の直撃を受け、激しい金（正貨）の流出と【昭和恐慌】(④)を引き起こしました。"
+            },
+            {
+                category: "昭和恐慌と社会問題",
+                question: "昭和恐慌（1930〜1933年）期における日本の社会情勢として正しいものはどれか？",
+                context: "失業・労働争議と社会的混乱",
+                options: [
+                    "全国の失業者が約40万人に達し、労働争議が頻発した",
+                    "空前の人手不足となり、賃金が急激に上昇した",
+                    "完全雇用が達成され、労働争議はほぼゼロになった",
+                    "外資系企業の参入により雇用が急速に創出された"
+                ],
+                answer: 0,
+                explanation: "昭和恐慌により企業の倒産・操業短縮が相次ぎ、全国で約40万人もの失業者が発生。賃金引き下げに反対する労働争議が急増しました。"
+            },
+            {
+                category: "農業恐慌の惨状",
+                question: "昭和恐慌下で特に農村を襲った（ ⑤ ）の背景や影響に関する記述として【誤っているもの】はどれか？",
+                context: "プリント穴埋め⑤の確認",
+                options: [
+                    "米の収穫量が過去最高を記録したため、農家の所得が過去最高となった",
+                    "アメリカの恐慌による生糸輸出減退から繭価が暴落し、養蚕・製糸業に大打撃を与えた",
+                    "米価暴落と負債累積により、娘の身売りや欠食児童が社会問題化した",
+                    "耕作条件をめぐり農民と地主の間で小作争議が激化した"
+                ],
+                answer: 0,
+                explanation: "【農業恐慌】(⑤)では生糸輸出の激減・繭価暴落に加え、米価も暴落。農家の負債が累積し、「娘の身売り」や東北地方を中心とする「欠食児童」が深刻な社会問題となりました。"
+            },
+            {
+                category: "重要産業統制法",
+                question: "1931年に制定され、主要産業のカルテル（企業連合）協定に法的強制力を与えて産業の合理化・統制を進めようとした法律（ ⑥ ）は何か？",
+                context: "プリント穴埋め⑥の確認",
+                options: [
+                    "重要産業統制法",
+                    "国家総動員法",
+                    "治安維持法",
+                    "小作調停法"
+                ],
+                answer: 0,
+                explanation: "1931年、不況下での無制限な価格競争を防ぎ企業を保護するため、カルテル結成に法的強制力を持たせる【重要産業統制法】(⑥)が制定されました。"
+            },
+            {
+                category: "ロンドン海軍軍縮会議",
+                question: "1930年、浜口内閣（幣原喜重郎外相）のもとで派遣された全権若槻礼次郎らが調印した条約（ ⑦ ）の内容として正しいものはどれか？",
+                context: "プリント穴埋め⑦の確認",
+                options: [
+                    "ロンドン海軍軍備制限条約 — 補助艦保有量を対英米6〜7割に制限し、主力艦の建造休止を1936年まで延長した",
+                    "ワシントン海軍軍縮条約 — 主力艦保有比率を日5：英5：米3と定めた",
+                    "ヴェルサイユ条約 — 陸軍の兵力上限を10万人に制限した",
+                    "四カ国条約 — 太平洋上の島嶼に関する現状維持を定めた"
+                ],
+                answer: 0,
+                explanation: "【ロンドン海軍軍備制限条約】(⑦)により、補助艦（巡洋艦・駆逐艦・潜水艦等）の対英米保有比率が約69.8％（全体で約7割）に制限され、主力艦建休（建造禁止）が1936年まで延長されました。"
+            },
+            {
+                category: "統帥権干犯問題",
+                question: "ロンドン海軍軍備制限条約の調印をめぐり、海軍軍令部や軍部・右翼・立憲政友会が浜口内閣を激しく攻撃した根拠（ ⑧ ）とその経緯について正しいものはどれか？",
+                context: "プリント穴埋め⑧の確認",
+                options: [
+                    "【統帥権干犯問題】であり、軍令部の反対を押し切って条約を補比・調印したことは憲法第11条の天皇の統帥権を侵害していると批判された",
+                    "【帷幄上奏権問題】であり、陸軍大臣を通さずに天皇へ報告したことが問題視された",
+                    "【編成権干犯問題】であり、大日本帝国憲法第12条の陸海軍編制権を内閣が独占したと批判された",
+                    "【枢密院諮詢拒否問題】であり、全権が独断で国際条約に批准したことが違反とされた"
+                ],
+                answer: 0,
+                explanation: "憲法第11条「天皇ハ陸海軍ヲ統帥ス」に基づき、軍事専門の軍令部の同意なしに兵器量を定めたことは【統帥権干犯問題】(⑧)であるとして、野党政友会や右翼・軍部が浜口内閣を批判しました。"
+            },
+            {
+                category: "浜口首相遭難と内閣交代",
+                question: "統帥権干犯問題などで右翼・軍部からの非難が高まる中、1930年11月に東京駅で右翼青年（佐郷屋留雄）に狙撃され、後に死亡した浜口首相の後に成立した内閣（ ⑨ ）はどれか？",
+                context: "プリント穴埋め⑨の確認",
+                options: [
+                    "第2次 若槻礼次郎 内閣",
+                    "第2次 田中義一 内閣",
+                    "斎藤実 内閣",
+                    "岡田啓介 内閣"
+                ],
+                answer: 0,
+                explanation: "浜口雄幸首相が東京駅で狙撃されて負傷（翌年死亡）したため、立憲民政党の【第2次若槻礼次郎】(⑨)内閣が発足しました（1931年）。"
+            },
+            {
+                category: "憲法構造と統帥権の理解",
+                question: "大日本帝国憲法における「統帥権（第11条）」と「編制大権（第12条）」の違いに関する説明として正しいものはどれか？",
+                context: "憲法第11条と第12条の構造",
+                options: [
+                    "第11条（統帥権）は作戦・用兵に関し参謀本部・軍令部が担当し、第12条（編制大権）は常備兵額・組織に関し内閣（陸海軍大臣）が輔弼する",
+                    "第11条（統帥権）は内閣総理大臣が握り、第12条（編制大権）は国会が握る",
+                    "第11条も第12条もすべて外務省の専権事項である",
+                    "第11条（統帥権）と第12条（編制大権）は全く同一の概念であり区別されない"
+                ],
+                answer: 0,
+                explanation: "憲法第11条（統帥権）は作戦・用兵を指し参謀本部・海軍軍令部が輔弼（帷幄上奏）。第12条（編制・兵額）は内閣（陸海軍大臣）が輔弼する事項と整理されていましたが、軍部は軍縮を「統帥権の干犯」と主張して政権を追い詰めました。"
+            }
+        ];
+
+        // App State
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+
+        // DOM Elements
+        const startScreen = document.getElementById('start-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultScreen = document.getElementById('result-screen');
+
+        const startBtn = document.getElementById('start-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const reviewBtn = document.getElementById('review-btn');
+
+        const questionCategory = document.getElementById('question-category');
+        const questionCount = document.getElementById('question-count');
+        const progressBar = document.getElementById('progress-bar');
+        const questionText = document.getElementById('question-text');
+        const contextBox = document.getElementById('context-box');
+        const contextText = document.getElementById('context-text');
+        const optionsContainer = document.getElementById('options-container');
+
+        const feedbackCard = document.getElementById('feedback-card');
+        const feedbackBadge = document.getElementById('feedback-badge');
+        const scoreIncrement = document.getElementById('score-increment');
+        const explanationText = document.getElementById('explanation-text');
+
+        const bgmToggle = document.getElementById('bgm-toggle');
+        const seToggle = document.getElementById('se-toggle');
+        const bgmStatus = document.getElementById('bgm-status');
+        const seStatus = document.getElementById('se-status');
+
+        // Audio Controls Event Listeners
+        bgmToggle.addEventListener('click', () => {
+            const isPlaying = sound.toggleBGM();
+            bgmStatus.textContent = `BGM: ${isPlaying ? 'ON' : 'OFF'}`;
+            bgmToggle.classList.toggle('bg-indigo-600', isPlaying);
+            bgmToggle.classList.toggle('bg-slate-700', !isPlaying);
+            bgmToggle.classList.toggle('text-white', isPlaying);
+            bgmToggle.classList.toggle('text-slate-300', !isPlaying);
+        });
+
+        seToggle.addEventListener('click', () => {
+            sound.seEnabled = !sound.seEnabled;
+            seStatus.textContent = `SE: ${sound.seEnabled ? 'ON' : 'OFF'}`;
+            seToggle.classList.toggle('bg-indigo-600', sound.seEnabled);
+            seToggle.classList.toggle('bg-slate-700', !sound.seEnabled);
+            seToggle.classList.toggle('text-white', sound.seEnabled);
+            seToggle.classList.toggle('text-slate-300', !sound.seEnabled);
+        });
+
+        // Navigation Event Listeners
+        startBtn.addEventListener('click', startQuiz);
+        nextBtn.addEventListener('click', handleNextQuestion);
+        restartBtn.addEventListener('click', startQuiz);
+        reviewBtn.addEventListener('click', toggleReview);
+
+        function startQuiz() {
+            sound.playClick();
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+
+            startScreen.classList.add('hidden');
+            resultScreen.classList.add('hidden');
+            quizScreen.classList.remove('hidden');
+
+            document.getElementById('review-container').classList.add('hidden');
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestionIndex];
+
+            // Reset UI
+            feedbackCard.classList.add('hidden');
+            optionsContainer.innerHTML = '';
+
+            // Update Progress Header
+            questionCategory.textContent = `分野: ${q.category}`;
+            questionCount.textContent = `第 ${currentQuestionIndex + 1} / ${questions.length} 問`;
+            const progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            // Question Text & Hint Context
+            questionText.textContent = q.question;
+
+            if (q.context) {
+                contextBox.classList.remove('hidden');
+                contextText.textContent = q.context;
+            } else {
+                contextBox.classList.add('hidden');
+            }
+
+            // Render Option Buttons
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full p-4 rounded-2xl bg-slate-800 hover:bg-slate-700/80 border border-slate-700/80 text-left font-semibold text-sm md:text-base text-slate-200 flex items-start space-x-3 transition group';
+                
+                const prefix = document.createElement('span');
+                prefix.className = 'w-6 h-6 rounded-full bg-slate-700 group-hover:bg-indigo-500 group-hover:text-white text-slate-300 flex items-center justify-center text-xs font-black shrink-0 mt-0.5 transition';
+                prefix.textContent = ['A', 'B', 'C', 'D'][idx];
+
+                const textSpan = document.createElement('span');
+                textSpan.className = 'flex-1';
+                textSpan.textContent = opt;
+
+                btn.appendChild(prefix);
+                btn.appendChild(textSpan);
+
+                btn.addEventListener('click', () => selectAnswer(idx));
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIndex) {
+            const q = questions[currentQuestionIndex];
+            const isCorrect = selectedIndex === q.answer;
+
+            // Store user log
+            userAnswers.push({
+                question: q.question,
+                selected: selectedIndex,
+                correct: q.answer,
+                isCorrect: isCorrect,
+                explanation: q.explanation,
+                options: q.options,
+                category: q.category
+            });
+
+            // Play Sound Feedback
+            if (isCorrect) {
+                sound.playCorrect();
+                score++;
+            } else {
+                sound.playIncorrect();
+            }
+
+            // UI Button State Updating
+            const buttons = optionsContainer.querySelectorAll('button');
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.remove('hover:bg-slate-700/80');
+
+                if (idx === q.answer) {
+                    btn.classList.add('bg-emerald-950/80', 'border-emerald-500', 'text-emerald-200');
+                    const badge = btn.querySelector('span');
+                    badge.className = 'w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center text-xs font-black shrink-0 mt-0.5';
+                    badge.innerHTML = '<i class="fa-solid fa-check"></i>';
+                } else if (idx === selectedIndex && !isCorrect) {
+                    btn.classList.add('bg-rose-950/80', 'border-rose-500', 'text-rose-200');
+                    const badge = btn.querySelector('span');
+                    badge.className = 'w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5';
+                    badge.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    btn.classList.add('opacity-40');
+                }
+            });
+
+            // Show Feedback Banner
+            feedbackCard.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackCard.className = 'p-5 rounded-2xl border bg-emerald-950/40 border-emerald-500/50 space-y-3 animate-fade-in';
+                feedbackBadge.className = 'font-black text-lg text-emerald-400 flex items-center space-x-2';
+                feedbackBadge.innerHTML = '<i class="fa-solid fa-circle-check"></i><span>正解！素晴らしい理解力！</span>';
+                scoreIncrement.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+                scoreIncrement.textContent = '+1 Point';
+            } else {
+                feedbackCard.className = 'p-5 rounded-2xl border bg-rose-950/40 border-rose-500/50 space-y-3 animate-fade-in';
+                feedbackBadge.className = 'font-black text-lg text-rose-400 flex items-center space-x-2';
+                feedbackBadge.innerHTML = '<i class="fa-solid fa-circle-xmark"></i><span>不正解... 要チェック！</span>';
+                scoreIncrement.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30';
+                scoreIncrement.textContent = '+0 Point';
+            }
+
+            explanationText.textContent = q.explanation;
+        }
+
+        function handleNextQuestion() {
+            sound.playClick();
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+
+            const percentage = Math.round((score / questions.length) * 100);
+            document.getElementById('final-score').textContent = score;
+            document.getElementById('final-percentage').textContent = `${percentage}%`;
+
+            // Ranks based on Score
+            const rankTitle = document.getElementById('rank-title');
+            const rankIcon = document.getElementById('rank-icon');
+            const rankDesc = document.getElementById('rank-description');
+
+            if (score === 12) {
+                rankTitle.textContent = "昭和経済・外交マスター（蔵相・井上準之助級）";
+                rankIcon.className = "fa-solid fa-crown text-5xl text-yellow-400";
+                rankDesc.textContent = "全問正解パーフェクト！金解禁のメカニズムから昭和恐慌・農業恐慌、ロンドン軍縮条約、統帥権干犯問題まで完璧にマスターしています！テスト対策もこれでバッチリ！";
+            } else if (score >= 10) {
+                rankTitle.textContent = "外務大臣・幣原喜重郎級";
+                rankIcon.className = "fa-solid fa-building-columns text-5xl text-indigo-400";
+                rankDesc.textContent = "素晴らしい高得点です！浜口内閣の三大政策や軍縮交渉の流れを深く理解できています。間違えた問題を復習してパーフェクトを目指そう！";
+            } else if (score >= 7) {
+                rankTitle.textContent = "全権・若槻礼次郎クラス";
+                rankIcon.className = "fa-solid fa-user-tie text-5xl text-purple-400";
+                rankDesc.textContent = "合格ライン達成！旧平価解禁と昭和恐慌のつながりや、統帥権干犯問題の基本がしっかり身についています。解説を見直してさらに定着させましょう！";
+            } else if (score >= 4) {
+                rankTitle.textContent = "ロンドン会議随行員クラス";
+                rankIcon.className = "fa-solid fa-scroll text-5xl text-pink-400";
+                rankDesc.textContent = "基本知識は掴めています！「なぜ旧平価解禁で円高になるのか」「憲法第11条と12条の違い」などの重要ポイントをプリントで再確認してみよう！";
+            } else {
+                rankTitle.textContent = "歴史探究の見習い生";
+                rankIcon.className = "fa-solid fa-book-open-reader text-5xl text-rose-400";
+                rankDesc.textContent = "伸びしろ充分！まずはプリントNo.60の図表（旧平価 vs 新平価）をしっかり読み直し、全問解説を見返しながらもう一度挑戦してみよう！";
+            }
+
+            renderReviewList();
+        }
+
+        function toggleReview() {
+            sound.playClick();
+            const reviewContainer = document.getElementById('review-container');
+            reviewContainer.classList.toggle('hidden');
+        }
+
+        function renderReviewList() {
+            const reviewList = document.getElementById('review-list');
+            reviewList.innerHTML = '';
+
+            userAnswers.forEach((ans, idx) => {
+                const card = document.createElement('div');
+                card.className = `p-4 rounded-2xl border text-xs space-y-2 ${
+                    ans.isCorrect ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-rose-950/20 border-rose-500/30'
+                }`;
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between font-bold">
+                        <span class="${ans.isCorrect ? 'text-emerald-400' : 'text-rose-400'} flex items-center">
+                            ${ans.isCorrect ? '<i class="fa-solid fa-circle-check mr-1.5"></i>正解' : '<i class="fa-solid fa-circle-xmark mr-1.5"></i>不正解'} (第${idx + 1}問)
+                        </span>
+                        <span class="text-slate-400 bg-slate-800 px-2.5 py-0.5 rounded-full">${ans.category}</span>
+                    </div>
+                    <p class="font-bold text-slate-200 text-sm leading-snug">${ans.question}</p>
+                    <p class="text-slate-300"><span class="text-slate-400">あなたの解答:</span> ${ans.options[ans.selected]}</p>
+                    ${!ans.isCorrect ? `<p class="text-emerald-300 font-semibold"><span class="text-slate-400">正解:</span> ${ans.options[ans.correct]}</p>` : ''}
+                    <div class="bg-slate-900/60 p-3 rounded-xl text-slate-300 border border-slate-800 mt-2 leading-relaxed">
+                        <span class="text-indigo-400 font-bold">ポイント解説:</span> ${ans.explanation}
+                    </div>
+                `;
+
+                reviewList.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
